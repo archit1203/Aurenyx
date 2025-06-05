@@ -1,34 +1,43 @@
+/* footer.css */
 footer {
-  background-color: #222831; /* same bg */
+  background-color: #1C1F25;
+  padding: 2.5rem 1.5rem;
   color: #F4F4F4;
-  padding: 2rem 3rem;
-  border-top: 1px solid #00C896; /* subtle top border for separation */
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-footer .footer-content {
-  max-width: 900px;
-  margin: 0 auto;
+footer .footer-columns {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+footer h3 {
+  font-weight: 700;
+  color: #FFD369;
+  margin-bottom: 0.5rem;
+  font-family: 'Manrope', sans-serif;
 }
 
 footer ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 2rem;
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+}
+
+footer ul li {
+  margin-bottom: 0.4rem;
 }
 
 footer ul li a {
   color: #F4F4F4;
   text-decoration: none;
-  transition: color 0.3s ease;
-  cursor: pointer;
+  transition: color 0.25s ease-in-out;
 }
 
 footer ul li a:hover,
@@ -37,11 +46,19 @@ footer ul li a:focus {
   outline: none;
 }
 
+footer .social-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  color: #FFD369;
+}
+
 footer .social-icons a {
-  color: #F4F4F4;
-  margin-left: 1rem;
+  transition: color 0.3s ease-in-out;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: 700;
 }
 
 footer .social-icons a:hover,
@@ -50,10 +67,47 @@ footer .social-icons a:focus {
   outline: none;
 }
 
-@media (max-width: 600px) {
-  footer .footer-content {
+footer .copyright {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: #888888;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  footer .footer-columns {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
   }
+}
+/* Footer link hover */
+footer ul li a {
+  color: #F4F4F4;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out, text-shadow 0.3s ease;
+}
+
+footer ul li a:hover,
+footer ul li a:focus {
+  color: #00C896;
+  text-shadow: 0 0 6px #00c896aa;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Social icon hover */
+footer .social-icons a {
+  transition: color 0.3s ease-in-out, transform 0.3s ease;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+footer .social-icons a:hover,
+footer .social-icons a:focus {
+  color: #00C896;
+  transform: scale(1.2);
+  outline: none;
+  cursor: pointer;
 }
