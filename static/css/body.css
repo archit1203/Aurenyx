@@ -1,4 +1,5 @@
-/* Reset for margin and padding */
+/* body.css */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +8,7 @@
 
 body {
   margin: 0;
-  background-color: #222831; /* Charcoal Slate */
+  background-color: #222831; /* Charcoal Slate base */
   color: #F4F4F4; /* Off-white */
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
@@ -24,84 +25,117 @@ main {
   z-index: 1;
 }
 
-/* Hero Section Background: subtle abstract */
+/* Subtle abstract gradient background behind hero */
 .hero {
   position: relative;
-  padding: 3rem 1.5rem 4rem;
-  background: radial-gradient(circle at center, #002f2f10, transparent 70%);
+  padding: 5rem 1.5rem 6rem 1.5rem;
   overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #00c896 0%, #009970 50%, #005f5f 100%);
+  box-shadow: 0 0 40px rgba(0, 200, 150, 0.3);
+  color: #e0f7f3;
 }
 
-/* Remove shadow glow from hero text */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulseBg 10s linear infinite alternate;
+  z-index: 0;
+  border-radius: 16px;
+}
+
+@keyframes pulseBg {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.1;
+  }
+}
 
 .hero h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 3.6rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
   letter-spacing: 3px;
-  color: #00C896; /* Emerald Teal */
-  text-shadow: none; /* Removed glow */
+  color: #e0f7f3;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 8px #00C896aa;
   transition: color 0.3s ease;
-  animation: none;
+  animation: fadeInUp 1.5s ease forwards;
 }
 
 .hero .tagline {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: #FFD369; /* Soft Gold */
+  margin-bottom: 1.8rem;
+  color: #b2f7e2;
   letter-spacing: 1.2px;
-  text-shadow: none;
-  animation: none;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1.8s ease forwards;
 }
 
-/* Subtext with light hover interactivity */
 .hero .subtext {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   max-width: 600px;
-  margin: 0 auto 2.5rem auto;
-  color: #ccc;
-  text-shadow: none;
-  opacity: 0.85;
+  margin: 0 auto 2.8rem auto;
+  color: #cde7e2cc;
+  position: relative;
+  z-index: 1;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  cursor: default;
 }
 
 .hero .subtext:hover {
-  color: #f4f4f4;
+  color: #e0f7f3;
   text-shadow: 0 0 5px #00C896;
 }
 
-/* CTA button */
 .cta {
   display: inline-block;
   background-color: #00C896;
   color: #222831;
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 1.2rem;
-  padding: 0.75rem 2rem;
+  font-size: 1.3rem;
+  padding: 0.8rem 2.4rem;
   border-radius: 30px;
+  box-shadow: 0 0 12px #00C896cc;
   text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.4s ease;
+  transition: background-color 0.3s ease, box-shadow 0.4s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .cta:hover,
 .cta:focus {
-  background-color: #00A67A;
-  box-shadow: 0 0 20px #00A67A;
+  background-color: #00a67a;
+  box-shadow: 0 0 20px #00a67acc;
   color: #f4f4f4;
+  transform: scale(1.05);
   outline: none;
 }
 
-/* Responsive CTA */
-@media (max-width: 480px) {
-  .cta {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.6rem 1rem;
+/* Animations */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
