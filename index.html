@@ -1,77 +1,73 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aurenyx - Illuminate your edge.</title>
 
-  <link rel="icon" type="image/png" href="static/images/logo.png" sizes="32x32" />
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Montserrat:wght@700&family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" href="static/images/logo.png" type="image/png" />
 
-  <!-- Styles -->
+  <!-- Fonts: Montserrat, Poppins, Manrope, Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Montserrat:wght@700;900&family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="static/css/header.css" />
   <link rel="stylesheet" href="static/css/body.css" />
   <link rel="stylesheet" href="static/css/footer.css" />
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="static/images/logo.png" alt="Aurenyx Logo" />
-      <div>
-        <div>AURENYX</div>
-        <small>Illuminate your edge.</small>
-      </div>
-    </div>
-    <ul>
-      <li><a href="/placement.html">Placement</a></li>
-      <li><a href="/gate.html">GATE</a></li>
-      <li><a href="/btech.html">BTech</a></li>
-      <li><a href="/register.html" class="register-btn">Register</a></li>
-    </ul>
-  </nav>
 
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo-link">
+        <img src="static/images/logo.png" alt="Aurenyx Logo" class="logo-img" />
+        <div class="logo-text">
+          <h1>AURENYX</h1>
+          <p class="tagline">Illuminate your edge.</p>
+        </div>
+      </a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="gate.html">GATE</a></li>
+          <li><a href="btech.html">BTech</a></li>
+          <li><a href="register.html" class="btn-register">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Hero -->
   <main>
-    <h1>Welcome to Aurenyx</h1>
-    <h2>Your path to mastering CS with clarity and edge.</h2>
-    <p>Empowering CS geeks with clean, structured learning for GATE, placements, and beyond.</p>
-    <button class="cta" onclick="window.location.href='/register.html'">Get Started</button>
+    <section class="hero">
+      <h1>AURENYX</h1>
+      <p class="tagline">Illuminate your edge.</p>
+      <p class="subtext">
+        Empowering Computer Science aspirants with clean, smart, and future-ready learning.
+      </p>
+      <a href="register.html" class="cta">Get Started</a>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <div class="footer-columns">
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/placement.html">Placement</a></li>
-          <li><a href="/gate.html">GATE</a></li>
-          <li><a href="/btech.html">BTech</a></li>
-          <li><a href="/register.html">Register</a></li>
-        </ul>
+    <div class="container footer-container">
+      <div class="footer-left">
+        <p>© 2025 Aurenyx. All rights reserved.</p>
+        <nav class="footer-nav">
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </nav>
       </div>
-      <div>
-        <h3>Contact</h3>
-        <ul>
-          <li>Email: <a href="mailto:contact@aurenyx.com">contact@aurenyx.com</a></li>
-          <li>Instagram: <a href="https://www.instagram.com/architcse/" target="_blank" rel="noopener noreferrer">@architcse</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/archit1203/" target="_blank" rel="noopener noreferrer">archit1203</a></li>
-        </ul>
+      <div class="footer-right">
+        <a href="https://www.instagram.com/architcse/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">Instagram</a>
+        <a href="https://www.linkedin.com/in/archit1203/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">LinkedIn</a>
       </div>
-    </div>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/architcse/" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
-        &#x1F47E;
-      </a>
-      <a href="https://www.linkedin.com/in/archit1203/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
-        &#x1F4BB;
-      </a>
-    </div>
-    <div class="copyright">
-      &copy; 2025 Aurenyx. All rights reserved.
     </div>
   </footer>
-  <script src="static/js/main.js" defer></script>
 
 </body>
 </html>
