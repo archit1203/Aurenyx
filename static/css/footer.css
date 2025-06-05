@@ -1,53 +1,97 @@
-/* footer.css */
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 footer {
-  background-color: #1B1F24;
+  background: linear-gradient(90deg, #121212, #1e1e2f);
   padding: 1.5rem 2rem;
-  box-shadow: inset 0 1px 5px #000000aa;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
   color: #bbb;
+  box-shadow: inset 0 0 20px #00c89655;
+  border-top: 2px solid #00c896;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-container {
   max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
+/* Left side */
 .footer-left p {
   margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #00c896;
+  user-select: none;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.4rem;
 }
 
 .footer-nav a {
   color: #FFD369;
-  margin-left: 1rem;
   text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   transition: color 0.3s ease;
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 2px;
 }
 
 .footer-nav a:hover,
 .footer-nav a:focus {
   color: #00C896;
+  border-bottom-color: #00C896;
   outline: none;
 }
 
-.footer-right a.social-link {
-  color: #F4F4F4;
-  margin-left: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.footer-right a.social-link:hover,
-.footer-right a.social-link:focus {
+/* Right side */
+.footer-right a {
   color: #00C896;
-  border-color: #00C896;
+  font-weight: 700;
+  margin-left: 1.2rem;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  user-select: none;
+}
+
+.footer-right a:hover,
+.footer-right a:focus {
+  color: #FFD369;
+  border-bottom-color: #FFD369;
   outline: none;
+}
+
+/* Mobile stacked */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-nav {
+    margin: 0.5rem 0;
+  }
+
+  .footer-right a {
+    margin-left: 0.7rem;
+  }
 }
