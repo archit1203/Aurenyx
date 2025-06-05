@@ -1,115 +1,51 @@
-
-/* body.css */
-
 body {
   margin: 0;
-  background-color: #222831; /* Charcoal Slate */
-  color: #F4F4F4; /* Off-white */
   font-family: 'Open Sans', sans-serif;
+  background-color: #222831; /* same as header/footer for seamless look */
+  color: #F4F4F4;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
-main {
+/* Hero content */
+.hero {
+  padding: 5rem 3rem;
   max-width: 900px;
-  margin: 3rem auto 5rem auto;
-  padding: 0 1.5rem;
+  margin: 0 auto;
   text-align: center;
 }
 
-/* Reduced glow effect, cleaner */
 .hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  font-size: 3.6rem;
-  margin-bottom: 0.2rem;
-  letter-spacing: 3px;
-  color: #00C896; /* Emerald Teal */
-  text-shadow: 0 0 5px #00C896;
-  transition: color 0.3s ease;
-  animation: glowPulse 3s ease-in-out infinite alternate;
-}
-
-.hero .tagline {
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: #FFD369; /* Soft Gold */
-  letter-spacing: 1.2px;
-  text-shadow: 0 0 4px #FFD369;
-  animation: glowPulseSoft 3s ease-in-out infinite alternate;
+  font-weight: 800;
+  font-size: 3.5rem;
+  margin-bottom: 0.4rem;
+  color: #00C896;
 }
 
-.hero .subtext {
-  font-size: 1.05rem;
-  max-width: 600px;
-  margin: 0 auto 2.5rem auto;
-  color: #ccc;
-  text-shadow: 0 0 3px #000000a0;
-  opacity: 0.85;
-  animation: fadeInUp 1.6s ease forwards;
-  transform: translateY(15px);
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-}
-
-.cta {
-  display: inline-block;
-  background-color: #00C896;
-  color: #222831;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
+.hero p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
   font-size: 1.2rem;
-  padding: 0.75rem 2rem;
-  border-radius: 30px;
-  box-shadow: 0 0 12px #00C896;
-  text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.4s ease;
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
-  transform: translateY(10px);
-  animation-delay: 2s;
-  animation-fill-mode: forwards;
+  margin-bottom: 2rem;
+  color: #FFD369;
 }
 
-.cta:hover,
-.cta:focus {
-  background-color: #00A67A;
-  box-shadow: 0 0 20px #00A67A;
-  color: #f4f4f4;
+/* CTA Button */
+.hero button.cta {
+  background-color: #FF6B6B;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero button.cta:hover,
+.hero button.cta:focus {
+  background-color: #e65555;
   outline: none;
-}
-
-/* Animations */
-
-@keyframes glowPulse {
-  0% {
-    color: #00C896;
-    text-shadow: 0 0 5px #00C896;
-  }
-  100% {
-    color: #00A67A;
-    text-shadow: 0 0 15px #00A67A;
-  }
-}
-
-@keyframes glowPulseSoft {
-  0% {
-    color: #FFD369;
-    text-shadow: 0 0 4px #FFD369;
-  }
-  100% {
-    color: #e6c254;
-    text-shadow: 0 0 10px #e6c254;
-  }
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
