@@ -1,117 +1,94 @@
-/* header.css */
-
-header {
-  background-color: #222831; /* Charcoal Slate */
-  padding: 0.5rem 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  /* Removed shadow */
-}
-
-.header-container {
-  max-width: 1200px;
-  width: 100%;
+/* Background consistent with body/footer */
+nav {
+  background-color: #222831;
+  padding: 1rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #00C896; /* subtle line to separate */
+  transition: background-color 0.3s ease;
 }
 
-.logo-link {
+/* Logo area - no scaling or shadow on hover */
+nav .logo {
   display: flex;
-  align-items: flex-end; /* align baseline to bring closer */
-  text-decoration: none;
-  color: #00C896; /* Emerald Teal */
+  align-items: center;
+  gap: 0.75rem;
+  color: #00C896;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  user-select: none;
+  cursor: default;
   transition: color 0.3s ease;
 }
 
-.logo-link:hover {
-  color: #FFD369; /* Soft Gold */
+nav .logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.3rem;
+  object-fit: contain;
+  /* No hover transform or shadow */
 }
 
-.logo-img {
-  width: 38px;
-  height: 38px;
-  margin-right: 0.6rem;
-  filter: drop-shadow(0 0 3px #00C896);
-}
-
-.logo-text {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.logo-text h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.6rem;
-  margin: 0;
-  letter-spacing: 3px;
-  line-height: 1;
+/* Tagline smaller, same color as logo text */
+nav .logo small {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-variant: small-caps;
+  font-size: 0.75rem;
   color: #00C896;
 }
 
-.logo-text .tagline {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 0.8rem;
-  color: #FFD369; /* Soft Gold */
-  letter-spacing: 1px;
-  margin-top: -8px; /* overlap effect */
-  margin-left: 2px;
-  user-select: none;
-  /* Slight subscript style */
-  transform-origin: left top;
-  transform: scale(0.75);
-}
-
-nav ul.nav-list {
+/* Nav links */
+nav ul {
   list-style: none;
   display: flex;
+  gap: 2rem;
   margin: 0;
   padding: 0;
-  gap: 1.2rem;
+}
+
+nav ul li a {
+  color: #F4F4F4;
+  text-decoration: none;
+  font-size: 1rem;
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 
-nav ul.nav-list li a {
-  color: #F4F4F4; /* Off-white */
-  text-decoration: none;
-  position: relative;
-  padding: 0.25rem 0.4rem;
-  border-radius: 4px;
-  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-nav ul.nav-list li a:hover,
-nav ul.nav-list li a:focus {
-  color: #222831; /* Charcoal */
-  background-color: #00C896; /* Emerald Teal */
-  box-shadow: 0 0 8px #00C896;
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #00C896;
+  border-bottom-color: #00C896;
   outline: none;
+  cursor: pointer;
 }
 
-.btn-register {
-  background-color: #FF6B6B; /* Warm Coral */
-  color: white !important;
+/* Register button same style but minimal glow */
+.register-btn {
+  background-color: #FF6B6B;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.35rem;
   font-weight: 700;
-  padding: 0.35rem 0.85rem;
-  border-radius: 20px;
-  box-shadow: 0 0 10px #FF6B6B;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  font-size: 0.95rem;
+  color: white !important;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.btn-register:hover,
-.btn-register:focus {
-  background-color: #FF4C4C;
-  box-shadow: 0 0 15px #FF4C4C;
-  color: white !important;
+.register-btn:hover,
+.register-btn:focus {
+  background-color: #e65555;
   outline: none;
+}
+
+/* Sticky nav line on scroll */
+nav.scrolled {
+  border-bottom-color: #FFD369;
 }
