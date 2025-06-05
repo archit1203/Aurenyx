@@ -1,94 +1,103 @@
-/* Background consistent with body/footer */
-nav {
-  background-color: #222831;
-  padding: 1rem 3rem;
+/* header.css */
+
+header {
+  background-color: #222831; /* Charcoal Slate */
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 200, 150, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  max-width: 1200px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #00C896; /* subtle line to separate */
-  transition: background-color 0.3s ease;
 }
 
-/* Logo area - no scaling or shadow on hover */
-nav .logo {
+.logo-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  color: #00C896;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  user-select: none;
-  cursor: default;
+  text-decoration: none;
+  color: #00C896; /* Emerald Teal */
   transition: color 0.3s ease;
 }
 
-nav .logo img {
+.logo-link:hover {
+  color: #FFD369; /* Soft Gold */
+}
+
+.logo-img {
   width: 40px;
   height: 40px;
-  border-radius: 0.3rem;
-  object-fit: contain;
-  /* No hover transform or shadow */
+  margin-right: 0.8rem;
+  filter: drop-shadow(0 0 4px #00C896);
 }
 
-/* Tagline smaller, same color as logo text */
-nav .logo small {
-  font-family: 'Poppins', sans-serif;
+.logo-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.logo-text .tagline {
+  font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-variant: small-caps;
-  font-size: 0.75rem;
-  color: #00C896;
+  font-size: 0.85rem;
+  margin: 0;
+  color: #FFD369; /* Soft Gold */
+  letter-spacing: 1px;
+  line-height: 1.2;
 }
 
-/* Nav links */
-nav ul {
+nav ul.nav-list {
   list-style: none;
   display: flex;
-  gap: 2rem;
   margin: 0;
   padding: 0;
+  gap: 1.6rem;
 }
 
-nav ul li a {
-  color: #F4F4F4;
-  text-decoration: none;
-  font-size: 1rem;
+nav ul.nav-list li a {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  transition: color 0.3s ease;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-  color: #00C896;
-  border-bottom-color: #00C896;
-  outline: none;
-  cursor: pointer;
-}
-
-/* Register button same style but minimal glow */
-.register-btn {
-  background-color: #FF6B6B;
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.35rem;
-  font-weight: 700;
-  color: white !important;
-  border: none;
-  font-family: 'Manrope', sans-serif;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+  color: #F4F4F4; /* Off-white */
+  text-decoration: none;
+  position: relative;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.register-btn:hover,
-.register-btn:focus {
-  background-color: #e65555;
+nav ul.nav-list li a:hover,
+nav ul.nav-list li a:focus {
+  color: #222831; /* Charcoal */
+  background-color: #00C896; /* Emerald Teal */
+  box-shadow: 0 0 8px #00C896;
   outline: none;
 }
 
-/* Sticky nav line on scroll */
-nav.scrolled {
-  border-bottom-color: #FFD369;
+.btn-register {
+  background-color: #FF6B6B; /* Warm Coral */
+  color: white !important;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  box-shadow: 0 0 10px #FF6B6B;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-register:hover,
+.btn-register:focus {
+  background-color: #FF4C4C;
+  box-shadow: 0 0 15px #FF4C4C;
+  color: white !important;
+  outline: none;
 }
