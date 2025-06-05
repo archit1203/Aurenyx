@@ -1,84 +1,53 @@
 /* footer.css */
+
 footer {
-  background-color: #1C1F25;
-  padding: 2.5rem 1.5rem;
-  color: #F4F4F4;
+  background-color: #1B1F24; /* slightly darker than header */
+  padding: 1.5rem 2rem;
+  box-shadow: inset 0 1px 5px #000000aa;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
-  line-height: 1.5;
+  color: #bbb;
 }
 
-footer .footer-columns {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 960px;
+.footer-container {
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-footer h3 {
-  font-weight: 700;
-  color: #FFD369;
-  margin-bottom: 0.5rem;
-  font-family: 'Manrope', sans-serif;
-}
-
-footer ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 1.25rem;
-}
-
-footer ul li {
-  margin-bottom: 0.4rem;
-}
-
-footer ul li a {
-  color: #F4F4F4;
-  text-decoration: none;
-  transition: color 0.25s ease-in-out;
-}
-
-footer ul li a:hover,
-footer ul li a:focus {
-  color: #00C896;
-  outline: none;
-}
-
-footer .social-icons {
-  margin-top: 1.5rem;
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 1.5rem;
-  color: #FFD369;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
-footer .social-icons a {
-  transition: color 0.3s ease-in-out;
+.footer-left p {
+  margin: 0;
+}
+
+.footer-nav a {
+  color: #FFD369; /* Soft Gold */
+  margin-left: 1rem;
   text-decoration: none;
-  font-weight: 700;
+  transition: color 0.3s ease;
 }
 
-footer .social-icons a:hover,
-footer .social-icons a:focus {
-  color: #00C896;
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: #00C896; /* Emerald Teal */
   outline: none;
 }
 
-footer .copyright {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  color: #888888;
-  border-top: 1px solid #333;
-  padding-top: 1rem;
+.footer-right a.social-link {
+  color: #F4F4F4;
+  margin-left: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-@media (max-width: 640px) {
-  footer .footer-columns {
-    flex-direction: column;
-    align-items: center;
-  }
+.footer-right a.social-link:hover,
+.footer-right a.social-link:focus {
+  color: #00C896;
+  border-color: #00C896;
+  outline: none;
 }
