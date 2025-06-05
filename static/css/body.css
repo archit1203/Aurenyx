@@ -17,33 +17,42 @@ main {
   text-align: center;
 }
 
+/* Reduced glow effect, cleaner */
 .hero h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  font-size: 3.8rem;
+  font-size: 3.6rem;
   margin-bottom: 0.2rem;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   color: #00C896; /* Emerald Teal */
-  text-shadow: 0 0 8px #00C896, 0 0 20px #00C896;
+  text-shadow: 0 0 5px #00C896;
+  transition: color 0.3s ease;
+  animation: glowPulse 3s ease-in-out infinite alternate;
 }
 
 .hero .tagline {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 0;
   margin-bottom: 1.5rem;
   color: #FFD369; /* Soft Gold */
-  letter-spacing: 1.5px;
-  text-shadow: 0 0 6px #FFD369;
+  letter-spacing: 1.2px;
+  text-shadow: 0 0 4px #FFD369;
+  animation: glowPulseSoft 3s ease-in-out infinite alternate;
 }
 
 .hero .subtext {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   max-width: 600px;
   margin: 0 auto 2.5rem auto;
   color: #ccc;
-  text-shadow: 0 0 4px #000000a0;
+  text-shadow: 0 0 3px #000000a0;
+  opacity: 0.85;
+  animation: fadeInUp 1.6s ease forwards;
+  transform: translateY(15px);
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 .cta {
@@ -58,6 +67,11 @@ main {
   box-shadow: 0 0 12px #00C896;
   text-decoration: none;
   transition: background-color 0.3s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 
 .cta:hover,
@@ -66,4 +80,35 @@ main {
   box-shadow: 0 0 20px #00A67A;
   color: #f4f4f4;
   outline: none;
+}
+
+/* Animations */
+
+@keyframes glowPulse {
+  0% {
+    color: #00C896;
+    text-shadow: 0 0 5px #00C896;
+  }
+  100% {
+    color: #00A67A;
+    text-shadow: 0 0 15px #00A67A;
+  }
+}
+
+@keyframes glowPulseSoft {
+  0% {
+    color: #FFD369;
+    text-shadow: 0 0 4px #FFD369;
+  }
+  100% {
+    color: #e6c254;
+    text-shadow: 0 0 10px #e6c254;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
