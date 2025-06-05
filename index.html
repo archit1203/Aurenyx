@@ -2,90 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aurenyx | Illuminate Your Edge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurenyx - Illuminate your edge.</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Manrope:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Montserrat:wght@700&family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #222831;
-      color: #F4F4F4;
-    }
-    h1, h2, h3 {
-      font-family: 'Manrope', sans-serif;
-    }
-    .brand-logo-text {
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: 1px;
-    }
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/static/css/header.css" />
+  <link rel="stylesheet" href="/static/css/index.css" />
+  <link rel="stylesheet" href="/static/css/footer.css" />
 </head>
-
-<body class="bg-[#222831] text-[#F4F4F4]">
-
-  <!-- Navbar -->
-  <header class="flex justify-between items-center px-6 py-4 bg-[#222831] shadow-md">
-    <div class="flex items-center space-x-3">
-      <img src="logo.png" alt="Aurenyx Logo" class="w-10 h-10 rounded-full shadow-md" />
+<body>
+  <nav>
+    <div class="logo">
+      <img src="/static/images/logo.png" alt="Aurenyx Logo" />
       <div>
-        <div class="text-xl font-bold text-[#00C896] brand-logo-text">AURENYX</div>
-        <div class="text-sm text-[#FFD369] uppercase tracking-wide">Illuminate Your Edge</div>
+        <div>AURENYX</div>
+        <small>Illuminate your edge.</small>
       </div>
     </div>
-    <nav>
-      <ul class="flex space-x-6 text-sm uppercase font-semibold">
-        <li><a href="/gate.html" class="hover:text-[#FFD369]">Gate</a></li>
-        <li><a href="/placements.html" class="hover:text-[#FFD369]">Placements</a></li>
-        <li><a href="/btech.html" class="hover:text-[#FFD369]">B.Tech</a></li>
-        <li><a href="/register.html" class="bg-[#00C896] text-[#222831] px-3 py-1 rounded hover:bg-[#00b187]">Register</a></li>
-      </ul>
-    </nav>
-  </header>
+    <ul>
+      <li><a href="/placement.html">Placement</a></li>
+      <li><a href="/gate.html">GATE</a></li>
+      <li><a href="/btech.html">BTech</a></li>
+      <li><a href="/register.html" class="register-btn">Register</a></li>
+    </ul>
+  </nav>
 
-  <!-- Hero Section -->
-  <section class="text-center py-28 px-4">
-    <h1 class="text-5xl font-semibold mb-4 text-[#F4F4F4]">Level Up Your Learning</h1>
-    <p class="text-[#FFD369] text-lg mb-6">A modern platform for next-gen CS explorers.</p>
-    <a href="/register.html" class="px-6 py-3 bg-[#00C896] text-[#222831] rounded-md font-semibold hover:bg-[#00b187] transition">Get Started</a>
-  </section>
+  <main>
+    <h1>Welcome to Aurenyx</h1>
+    <h2>Your path to mastering CS with clarity and edge.</h2>
+    <p>Empowering CS geeks with clean, structured learning for GATE, placements, and beyond.</p>
+    <button class="cta" onclick="window.location.href='/register.html'">Get Started</button>
+  </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#1C1F25] py-10 px-6 mt-10">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-[#F4F4F4]">
-      
+  <footer>
+    <div class="footer-columns">
       <div>
-        <h3 class="font-bold text-[#FFD369] mb-2">Explore</h3>
-        <ul class="space-y-1">
-          <li><a href="/gate.html" class="hover:underline">GATE</a></li>
-          <li><a href="/placements.html" class="hover:underline">Placements</a></li>
-          <li><a href="/btech.html" class="hover:underline">B.Tech Learning</a></li>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/placement.html">Placement</a></li>
+          <li><a href="/gate.html">GATE</a></li>
+          <li><a href="/btech.html">BTech</a></li>
+          <li><a href="/register.html">Register</a></li>
         </ul>
       </div>
-
       <div>
-        <h3 class="font-bold text-[#FFD369] mb-2">Support</h3>
-        <ul class="space-y-1">
-          <li><a href="/contact.html" class="hover:underline">Contact Us</a></li>
-          <li><a href="/faq.html" class="hover:underline">FAQs</a></li>
-          <li><a href="/terms.html" class="hover:underline">Terms & Conditions</a></li>
+        <h3>Contact</h3>
+        <ul>
+          <li>Email: <a href="mailto:contact@aurenyx.com">contact@aurenyx.com</a></li>
+          <li>Instagram: <a href="https://www.instagram.com/architcse/" target="_blank" rel="noopener noreferrer">@architcse</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/archit1203/" target="_blank" rel="noopener noreferrer">archit1203</a></li>
         </ul>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-[#FFD369] mb-2">Aurenyx</h3>
-        <p class="text-[#bbbbbb]">Empowering future-ready minds through crisp, modern learning modules tailored for competitive & creative tech growth.</p>
       </div>
     </div>
-
-    <div class="text-center text-xs text-[#888] mt-6 border-t border-[#333] pt-4">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/architcse/" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+        &#x1F47E;
+      </a>
+      <a href="https://www.linkedin.com/in/archit1203/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+        &#x1F4BB;
+      </a>
+    </div>
+    <div class="copyright">
       &copy; 2025 Aurenyx. All rights reserved.
     </div>
   </footer>
-
 </body>
 </html>
