@@ -1,4 +1,9 @@
-/* body.css */
+/* Reset for margin and padding */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   margin: 0;
@@ -15,9 +20,20 @@ main {
   margin: 3rem auto 5rem auto;
   padding: 0 1.5rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-/* Reduced glow effect, cleaner */
+/* Hero Section Background: subtle abstract */
+.hero {
+  position: relative;
+  padding: 3rem 1.5rem 4rem;
+  background: radial-gradient(circle at center, #002f2f10, transparent 70%);
+  overflow: hidden;
+}
+
+/* Remove shadow glow from hero text */
+
 .hero h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
@@ -25,9 +41,9 @@ main {
   margin-bottom: 0.2rem;
   letter-spacing: 3px;
   color: #00C896; /* Emerald Teal */
-  text-shadow: 0 0 5px #00C896;
+  text-shadow: none; /* Removed glow */
   transition: color 0.3s ease;
-  animation: glowPulse 3s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .hero .tagline {
@@ -38,23 +54,28 @@ main {
   margin-bottom: 1.5rem;
   color: #FFD369; /* Soft Gold */
   letter-spacing: 1.2px;
-  text-shadow: 0 0 4px #FFD369;
-  animation: glowPulseSoft 3s ease-in-out infinite alternate;
+  text-shadow: none;
+  animation: none;
 }
 
+/* Subtext with light hover interactivity */
 .hero .subtext {
   font-size: 1.05rem;
   max-width: 600px;
   margin: 0 auto 2.5rem auto;
   color: #ccc;
-  text-shadow: 0 0 3px #000000a0;
+  text-shadow: none;
   opacity: 0.85;
-  animation: fadeInUp 1.6s ease forwards;
-  transform: translateY(15px);
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: default;
 }
 
+.hero .subtext:hover {
+  color: #f4f4f4;
+  text-shadow: 0 0 5px #00C896;
+}
+
+/* CTA button */
 .cta {
   display: inline-block;
   background-color: #00C896;
@@ -64,14 +85,8 @@ main {
   font-size: 1.2rem;
   padding: 0.75rem 2rem;
   border-radius: 30px;
-  box-shadow: 0 0 12px #00C896;
   text-decoration: none;
   transition: background-color 0.3s ease, box-shadow 0.4s ease;
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
-  transform: translateY(10px);
-  animation-delay: 2s;
-  animation-fill-mode: forwards;
 }
 
 .cta:hover,
@@ -82,33 +97,11 @@ main {
   outline: none;
 }
 
-/* Animations */
-
-@keyframes glowPulse {
-  0% {
-    color: #00C896;
-    text-shadow: 0 0 5px #00C896;
-  }
-  100% {
-    color: #00A67A;
-    text-shadow: 0 0 15px #00A67A;
-  }
-}
-
-@keyframes glowPulseSoft {
-  0% {
-    color: #FFD369;
-    text-shadow: 0 0 4px #FFD369;
-  }
-  100% {
-    color: #e6c254;
-    text-shadow: 0 0 10px #e6c254;
-  }
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Responsive CTA */
+@media (max-width: 480px) {
+  .cta {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
   }
 }
