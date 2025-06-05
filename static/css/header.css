@@ -2,13 +2,13 @@
 
 header {
   background-color: #222831; /* Charcoal Slate */
-  padding: 0.8rem 2rem;
-  box-shadow: 0 2px 8px rgba(0, 200, 150, 0.15);
+  padding: 0.5rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   justify-content: center;
+  /* Removed shadow */
 }
 
 .header-container {
@@ -21,7 +21,7 @@ header {
 
 .logo-link {
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* align baseline to bring closer */
   text-decoration: none;
   color: #00C896; /* Emerald Teal */
   transition: color 0.3s ease;
@@ -32,28 +32,41 @@ header {
 }
 
 .logo-img {
-  width: 40px;
-  height: 40px;
-  margin-right: 0.8rem;
-  filter: drop-shadow(0 0 4px #00C896);
+  width: 38px;
+  height: 38px;
+  margin-right: 0.6rem;
+  filter: drop-shadow(0 0 3px #00C896);
+}
+
+.logo-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo-text h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin: 0;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  line-height: 1;
+  color: #00C896;
 }
 
 .logo-text .tagline {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 0.85rem;
-  margin: 0;
+  font-size: 0.8rem;
   color: #FFD369; /* Soft Gold */
   letter-spacing: 1px;
-  line-height: 1.2;
+  margin-top: -8px; /* overlap effect */
+  margin-left: 2px;
+  user-select: none;
+  /* Slight subscript style */
+  transform-origin: left top;
+  transform: scale(0.75);
 }
 
 nav ul.nav-list {
@@ -61,17 +74,17 @@ nav ul.nav-list {
   display: flex;
   margin: 0;
   padding: 0;
-  gap: 1.6rem;
+  gap: 1.2rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 nav ul.nav-list li a {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
   color: #F4F4F4; /* Off-white */
   text-decoration: none;
   position: relative;
-  padding: 0.3rem 0.5rem;
+  padding: 0.25rem 0.4rem;
   border-radius: 4px;
   transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -88,10 +101,11 @@ nav ul.nav-list li a:focus {
   background-color: #FF6B6B; /* Warm Coral */
   color: white !important;
   font-weight: 700;
-  padding: 0.4rem 1rem;
-  border-radius: 25px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
   box-shadow: 0 0 10px #FF6B6B;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .btn-register:hover,
