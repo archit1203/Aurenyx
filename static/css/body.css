@@ -1,141 +1,60 @@
-/* body.css */
+/* Body background and hero section - original you preferred */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  margin: 0;
-  background-color: #222831; /* Charcoal Slate base */
-  color: #F4F4F4; /* Off-white */
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-main {
-  max-width: 900px;
-  margin: 3rem auto 5rem auto;
-  padding: 0 1.5rem;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-/* Subtle abstract gradient background behind hero */
 .hero {
-  position: relative;
-  padding: 5rem 1.5rem 6rem 1.5rem;
-  overflow: hidden;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #00c896 0%, #009970 50%, #005f5f 100%);
-  box-shadow: 0 0 40px rgba(0, 200, 150, 0.3);
-  color: #e0f7f3;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -25%;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  animation: pulseBg 10s linear infinite alternate;
-  z-index: 0;
-  border-radius: 16px;
-}
-
-@keyframes pulseBg {
-  0% {
-    transform: scale(1);
-    opacity: 0.3;
-  }
-  100% {
-    transform: scale(1.15);
-    opacity: 0.1;
-  }
+  background: linear-gradient(135deg, #00C896 0%, #222831 100%);
+  color: var(--accent);
+  padding: 5rem 1rem 7rem;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  border-radius: 12px;
+  margin: 3rem auto;
+  max-width: 720px;
+  box-shadow: 0 6px 12px rgba(0, 200, 150, 0.3);
 }
 
 .hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  font-size: 3.6rem;
-  margin-bottom: 0.4rem;
-  letter-spacing: 3px;
-  color: #e0f7f3;
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 0 8px #00C896aa;
-  transition: color 0.3s ease;
-  animation: fadeInUp 1.5s ease forwards;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
-.hero .tagline {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-top: 0;
-  margin-bottom: 1.8rem;
-  color: #b2f7e2;
-  letter-spacing: 1.2px;
-  position: relative;
-  z-index: 1;
-  animation: fadeInUp 1.8s ease forwards;
-}
-
-.hero .subtext {
+.tagline-sub {
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 2.8rem auto;
-  color: #cde7e2cc;
-  position: relative;
-  z-index: 1;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.hero .subtext:hover {
-  color: #e0f7f3;
-  text-shadow: 0 0 5px #00C896;
+  margin-bottom: 2.5rem;
+  color: var(--accent);
+  opacity: 0.85;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.45;
 }
 
 .cta {
   display: inline-block;
-  background-color: #00C896;
-  color: #222831;
+  background-color: var(--alert);
+  color: var(--accent);
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 1.3rem;
-  padding: 0.8rem 2.4rem;
-  border-radius: 30px;
-  box-shadow: 0 0 12px #00C896cc;
+  padding: 0.85rem 2rem;
+  border-radius: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease;
   text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.4s ease, transform 0.3s ease;
-  position: relative;
-  z-index: 1;
+  box-shadow: 0 3px 10px rgba(255, 107, 107, 0.5);
 }
 
 .cta:hover,
 .cta:focus {
-  background-color: #00a67a;
-  box-shadow: 0 0 20px #00a67acc;
-  color: #f4f4f4;
-  transform: scale(1.05);
+  background-color: #ff4747;
+  box-shadow: 0 4px 14px rgba(255, 71, 71, 0.7);
   outline: none;
 }
 
-/* Animations */
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Minimal shadows for text */
+.hero p,
+.hero h1 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
