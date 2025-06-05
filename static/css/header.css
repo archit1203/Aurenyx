@@ -1,12 +1,15 @@
-/* header.css */
+/* Background consistent with body/footer */
 nav {
   background-color: #222831;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 3rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #00C896; /* subtle line to separate */
+  transition: background-color 0.3s ease;
 }
 
+/* Logo area - no scaling or shadow on hover */
 nav .logo {
   display: flex;
   align-items: center;
@@ -15,31 +18,33 @@ nav .logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
-  text-transform: uppercase;
   user-select: none;
+  cursor: default;
+  transition: color 0.3s ease;
 }
 
 nav .logo img {
   width: 40px;
   height: 40px;
-  border-radius: 0.375rem;
-  box-shadow: 0 4px 8px rgba(0, 200, 150, 0.4);
+  border-radius: 0.3rem;
+  object-fit: contain;
+  /* No hover transform or shadow */
 }
 
+/* Tagline smaller, same color as logo text */
 nav .logo small {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-variant: small-caps;
-  font-size: 0.85rem;
-  color: #FFD369;
+  font-size: 0.75rem;
+  color: #00C896;
 }
 
+/* Nav links */
 nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
   margin: 0;
   padding: 0;
 }
@@ -47,112 +52,43 @@ nav ul {
 nav ul li a {
   color: #F4F4F4;
   text-decoration: none;
-  transition: color 0.25s ease-in-out;
   font-size: 1rem;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-  color: #00C896;
-  outline: none;
-}
-
-.register-btn {
-  background-color: #FF6B6B;
-  padding: 0.5rem 1rem;
-  border-radius: 0.4rem;
-  font-weight: 700;
-  color: #fff !important;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.register-btn:hover,
-.register-btn:focus {
-  background-color: #e65555;
-  outline: none;
-}
-
-@media (max-width: 640px) {
-  nav ul {
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
-  nav .logo div {
-    display: none;
-  }
-}
-nav.scrolled {
-  box-shadow: 0 4px 8px rgba(0, 200, 150, 0.4);
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-nav ul li a.focus-visible {
-  outline: 2px solid #FFD369;
-  outline-offset: 3px;
-  border-radius: 3px;
-}
-
-/* Smaller tagline */
-nav .logo small {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-variant: small-caps;
-  font-size: 0.7rem; /* decreased from 0.85rem */
-  color: #FFD369;
   transition: color 0.3s ease;
-}
-
-/* Hover effect on logo */
-nav .logo:hover small {
-  color: #00C896;
-  cursor: default;
-}
-
-/* Hover effect on logo image */
-nav .logo img {
-  width: 40px;
-  height: 40px;
-  border-radius: 0.375rem;
-  box-shadow: 0 4px 8px rgba(0, 200, 150, 0.4);
-  transition: transform 0.3s ease;
-}
-
-nav .logo:hover img {
-  transform: scale(1.1);
-  cursor: default;
-}
-
-/* Nav link hover with subtle underline and color */
-nav ul li a {
-  color: #F4F4F4;
-  text-decoration: none;
-  transition: color 0.25s ease-in-out, border-bottom 0.25s ease-in-out;
-  font-size: 1rem;
-  padding-bottom: 2px;
   border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
   color: #00C896;
-  border-bottom: 2px solid #00C896;
+  border-bottom-color: #00C896;
   outline: none;
+  cursor: pointer;
 }
 
-/* Register button hover */
+/* Register button same style but minimal glow */
 .register-btn {
   background-color: #FF6B6B;
-  padding: 0.5rem 1rem;
-  border-radius: 0.4rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.35rem;
   font-weight: 700;
-  color: #fff !important;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: none;
+  color: white !important;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .register-btn:hover,
 .register-btn:focus {
   background-color: #e65555;
-  box-shadow: 0 0 8px #ff6b6baa;
   outline: none;
+}
+
+/* Sticky nav line on scroll */
+nav.scrolled {
+  border-bottom-color: #FFD369;
 }
