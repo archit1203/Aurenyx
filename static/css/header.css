@@ -1,130 +1,162 @@
-/* Reset for margin and padding */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* header.css */
 
-header {
-  background-color: #222831; /* Charcoal Slate */
-  padding: 0.4rem 1.2rem; /* Reduced padding for ~20% smaller header */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem; /* Slightly smaller font size */
-}
-
-.header-container {
-  max-width: 1200px;
-  width: 100%;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.logo-link {
+header {
+  background-color: #121820;
+  padding: 1rem 0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-tagline-box {
   display: flex;
-  align-items: center; /* Make logo image and text aligned closely */
-  gap: 0.1rem; /* Very close spacing */
-  text-decoration: none;
+  align-items: center;
+  gap: 0.6rem;
   cursor: pointer;
-  color: #00C896;
-  transition: color 0.3s ease;
-}
-
-.logo-img {
-  width: 34px;  /* Slightly smaller */
-  height: 34px;
-  /* Remove shadow */
-  filter: none;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 1;
-}
-
-.logo-text h1,
-.logo-text .tagline {
-  margin: 0;
-  padding: 0;
   user-select: none;
-  transition: color 0.3s ease;
 }
 
-/* Make logo name and tagline very close */
-.logo-text h1 {
+.logo-tagline-box:focus {
+  outline: 2px solid #00c896;
+  outline-offset: 3px;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1px #00c896aa);
+}
+
+.aurenyx-name {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 2.5px;
-  color: #00C896;
+  font-weight: 900;
+  font-size: 1.7rem;
+  color: #00c896;
+  transition: color 0.4s ease;
+  user-select: none;
 }
 
-.logo-text .tagline {
+.tagline {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 0.75rem;
-  color: #FFD369;
-  margin-top: -6px;
-  margin-left: 2px;
-  transform-origin: left top;
-  transform: scale(0.85);
+  font-size: 1rem;
+  color: #8af3c7;
+  transition: color 0.4s ease;
+  user-select: none;
 }
 
-/* Hover effect: interchange colors of name and tagline */
-.logo-link:hover .logo-text h1 {
-  color: #FFD369;
+/* Hover swap colors on logo-tagline box */
+
+.logo-tagline-box:hover .aurenyx-name {
+  color: #8af3c7;
 }
 
-.logo-link:hover .logo-text .tagline {
-  color: #00C896;
+.logo-tagline-box:hover .tagline {
+  color: #00c896;
 }
 
-nav ul.nav-list {
-  list-style: none;
+/* Navbar styles */
+
+nav {
+  position: relative;
   display: flex;
-  gap: 0.6rem; /* Closer spacing */
-  font-family: 'Manrope', sans-serif;
+  align-items: center;
+}
+
+#nav-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #00c896;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 0.25rem;
+}
+
+/* Nav links as a horizontal list */
+#nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+#nav-links li a {
+  color: #8af3c7;
   font-weight: 600;
-  font-size: 0.85rem; /* Slightly smaller */
-}
-
-nav ul.nav-list li a {
-  color: #F4F4F4;
+  font-size: 0.9rem;
   text-decoration: none;
-  padding: 0.15rem 0.3rem;
-  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
   transition: color 0.3s ease, background-color 0.3s ease;
+  user-select: none;
 }
 
-nav ul.nav-list li a:hover,
-nav ul.nav-list li a:focus {
-  color: #222831;
-  background-color: #00C896;
+#nav-links li a:hover,
+#nav-links li a:focus {
+  background-color: #00c896;
+  color: #121820;
   outline: none;
 }
 
-.btn-register {
-  background-color: #FF6B6B;
-  color: white !important;
-  font-weight: 700;
-  padding: 0.25rem 0.6rem;
-  border-radius: 20px;
-  box-shadow: none; /* Removed shadow */
-  font-size: 0.85rem;
-  transition: background-color 0.3s ease;
+/* Make navbar links very close (smaller gap) on desktop */
+@media (min-width: 600px) {
+  #nav-links {
+    gap: 0.6rem;
+  }
+
+  #nav-links li a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
 }
 
-.btn-register:hover,
-.btn-register:focus {
-  background-color: #FF4C4C;
-  color: white !important;
-  outline: none;
+/* Mobile Nav */
+@media (max-width: 599px) {
+  #nav-toggle {
+    display: block;
+  }
+
+  #nav-links {
+    flex-direction: column;
+    background-color: #121820;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 8px rgba(0, 200, 150, 0.6);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  #nav-links.show {
+    max-height: 300px; /* Enough to show all links */
+  }
+
+  #nav-links li {
+    border-bottom: 1px solid #00c89644;
+  }
+
+  #nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  #nav-links li a {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
 }
