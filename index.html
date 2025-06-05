@@ -1,80 +1,56 @@
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aurenyx - Illuminate your edge.</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="static/images/logo.png" type="image/png" />
-
-  <!-- Fonts: Montserrat, Poppins, Manrope, Open Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Montserrat:wght@700;900&family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet" />
-
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&family=Montserrat:wght@900&family=Open+Sans&display=swap" rel="stylesheet" />
+  
   <!-- CSS -->
-  <link rel="stylesheet" href="static/css/header.css" />
-  <link rel="stylesheet" href="static/css/body.css" />
-  <link rel="stylesheet" href="static/css/footer.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="body.css" />
+  <link rel="stylesheet" href="footer.css" />
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="header-container">
-      <a href="index.html" class="logo-link">
-        <img src="static/images/logo.png" alt="Aurenyx Logo" class="logo-img" />
-        <div class="logo-text">
-          <h1>AURENYX</h1>
-          <p class="tagline">Illuminate your edge.</p>
-        </div>
-      </a>
+    <div class="header-inner container">
+      <div class="logo-tagline-box" tabindex="0">
+        <img src="logo.png" alt="Aurenyx Logo" class="logo" />
+        <div class="aurenyx-name">Aurenyx</div>
+        <div class="tagline">Illuminate your edge.</div>
+      </div>
+
       <nav>
-        <ul class="nav-list">
-          <li><a href="placements.html">Placements</a></li>
-          <li><a href="gate.html">GATE</a></li>
-          <li><a href="btech.html">BTech</a></li>
-          <li><a href="register.html" class="btn-register">Register</a></li>
+        <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <ul id="nav-links">
+          <li><a href="#placements">Placements</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  
-  <!-- Main Hero -->
+
   <main>
     <section class="hero">
-      <h1>AURENYX</h1>
+      <h1>Welcome to Aurenyx</h1>
       <p class="tagline">Illuminate your edge.</p>
-      <p class="subtext">
-        Empowering Computer Science aspirants with clean, smart, and future-ready learning.
-      </p>
-      <a href="register.html" class="cta">Get Started</a>
+      <p class="subtext">Self-paced Microlearning Platform for Tier-2/3 CS Students Preparing for GATE, M.Tech & Placements</p>
+      <a href="#courses" class="cta">Start Learning</a>
     </section>
   </main>
 
-
-  <!-- Footer -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-left">
-        <p>© 2025 Aurenyx. All rights reserved.</p>
-        <div class="footer-nav">
-          <a href="contact.html">Contact</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-        </div>
-      </div>
-      <div class="footer-right">
-        <a href="https://www.instagram.com/architcse/" target="_blank">Instagram</a>
-        <a href="https://www.linkedin.com/in/archit1203/" target="_blank">LinkedIn</a>
-      </div>
+    <div class="footer-inner container">
+      <p>© 2025 Aurenyx. All rights reserved.</p>
+      <p>Made with ❤ for CS students.</p>
     </div>
   </footer>
 
-  <!-- Modular JS -->
-  <script src="static/js/header.js"></script>
-  <script src="static/js/body.js"></script>
-  <script src="static/js/footer.js"></script>
-  
+  <script src="header.js"></script>
 </body>
 </html>
