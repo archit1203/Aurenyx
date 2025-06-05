@@ -1,156 +1,117 @@
-/* Branding Colors */
-:root {
-  --primary: #00C896; /* Emerald Teal */
-  --secondary: #222831; /* Charcoal Slate */
-  --accent: #F4F4F4; /* Off-White */
-  --highlight: #FFD369; /* Soft Gold */
-  --alert: #FF6B6B; /* Warm Coral */
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  background: var(--secondary);
-  color: var(--accent);
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+/* header.css */
 
 header {
-  background-color: var(--secondary);
-  box-shadow: 0 2px 8px rgba(0, 200, 150, 0.15);
-  padding: 1rem 0;
+  background-color: #222831; /* Charcoal Slate */
+  padding: 0.5rem 1.5rem;
   position: sticky;
   top: 0;
-  z-index: 100;
-}
-
-.header-inner {
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  /* Removed shadow */
 }
 
-/* Logo and Tagline box treated as one entity */
-.logo-tagline-box {
+.header-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  display: flex;
+  align-items: flex-end; /* align baseline to bring closer */
+  text-decoration: none;
+  color: #00C896; /* Emerald Teal */
+  transition: color 0.3s ease;
+}
+
+.logo-link:hover {
+  color: #FFD369; /* Soft Gold */
+}
+
+.logo-img {
+  width: 38px;
+  height: 38px;
+  margin-right: 0.6rem;
+  filter: drop-shadow(0 0 3px #00C896);
+}
+
+.logo-text {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  cursor: pointer;
-  user-select: none;
+  justify-content: center;
 }
 
-.logo-tagline-box .logo {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 0.2rem;
-  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.15));
-}
-
-.aurenyx-name {
+.logo-text h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.8rem;
-  color: var(--primary);
-  letter-spacing: 0.15em;
+  font-size: 1.6rem;
+  margin: 0;
+  letter-spacing: 3px;
   line-height: 1;
-  transition: color 0.3s ease;
+  color: #00C896;
 }
 
-.tagline {
-  font-family: 'Montserrat', sans-serif;
-  font-variant: small-caps;
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--highlight);
-  letter-spacing: 0.12em;
-  margin-top: 0.1rem;
-  transition: color 0.3s ease;
-}
-
-/* Interchanging colors on hover */
-.logo-tagline-box:hover .aurenyx-name {
-  color: var(--highlight);
-}
-.logo-tagline-box:hover .tagline {
-  color: var(--primary);
-}
-
-/* Navbar */
-nav {
-  position: relative;
-}
-
-#nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--accent);
-  cursor: pointer;
-}
-
-#nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.1rem;
-  align-items: center;
+.logo-text .tagline {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  color: #FFD369; /* Soft Gold */
+  letter-spacing: 1px;
+  margin-top: -8px; /* overlap effect */
+  margin-left: 2px;
+  user-select: none;
+  /* Slight subscript style */
+  transform-origin: left top;
+  transform: scale(0.75);
 }
 
-#nav-links li a {
-  color: var(--accent);
+nav ul.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 1.2rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav ul.nav-list li a {
+  color: #F4F4F4; /* Off-white */
   text-decoration: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 3px;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  position: relative;
+  padding: 0.25rem 0.4rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#nav-links li a:hover,
-#nav-links li a:focus {
-  background-color: var(--primary);
-  color: var(--secondary);
+nav ul.nav-list li a:hover,
+nav ul.nav-list li a:focus {
+  color: #222831; /* Charcoal */
+  background-color: #00C896; /* Emerald Teal */
+  box-shadow: 0 0 8px #00C896;
   outline: none;
 }
 
-/* Make navbar links closer together */
-#nav-links {
-  gap: 0.6rem;
+.btn-register {
+  background-color: #FF6B6B; /* Warm Coral */
+  color: white !important;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #FF6B6B;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.95rem;
 }
 
-/* Responsive Nav - hamburger menu for small screens */
-@media (max-width: 720px) {
-  #nav-toggle {
-    display: block;
-  }
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--secondary);
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: 180px;
-    padding: 1rem 0;
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0 4px 8px rgba(0, 200, 150, 0.2);
-  }
-  #nav-links.show {
-    display: flex;
-  }
-  #nav-links li {
-    margin: 0.4rem 0;
-    text-align: center;
-  }
+.btn-register:hover,
+.btn-register:focus {
+  background-color: #FF4C4C;
+  box-shadow: 0 0 15px #FF4C4C;
+  color: white !important;
+  outline: none;
 }
