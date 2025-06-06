@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
   const loadBtn = document.getElementById('loadProjectsBtn');
   const projectList = document.getElementById('projectsList');
 
