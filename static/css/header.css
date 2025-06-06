@@ -1,14 +1,14 @@
 /* header.css */
 
 header {
+  position: sticky;
+  width: 100%;
   background-color: #222831; /* Charcoal Slate */
   padding: 0.8rem 2rem;
   box-shadow: 0 2px 8px rgba(0, 200, 150, 0.15);
   position: sticky;
   top: 0;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
 }
 
 .header-container {
@@ -17,25 +17,40 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative; /* For absolute positioning of toggle */
+  height: 60px; /* Set height to align items */
 }
 
+/* Logo link */
 .logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #00C896; /* Emerald Teal */
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease;
+  z-index: 10; /* So it stays above toggle */
 }
 
 .logo-link:hover {
-  color: #FFD369; /* Soft Gold */
+  transform: scale(1.05);
+}
+
+.logo-shimmer {
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
   width: 40px;
   height: 40px;
   margin-right: 0.8rem;
-  filter: drop-shadow(0 0 4px #00C896);
+  filter: drop-shadow(0 1px 2px rgba(0, 200, 150, 0.2));
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo-text h1 {
@@ -44,16 +59,60 @@ header {
   font-size: 1.8rem;
   margin: 0;
   letter-spacing: 2px;
+  line-height: 1.1;
+  color: #00C896;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #00c896 20%,
+    #a5ffe0 40%,
+    #00c896 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
 }
 
 .logo-text .tagline {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 0.85rem;
-  margin: 0;
+  font-size: 0.75rem;
+  margin: 0.1rem 0 0 0;
   color: #FFD369; /* Soft Gold */
   letter-spacing: 1px;
-  line-height: 1.2;
+  text-align: center;
+  line-height: 1.1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #FFD369 20%,
+    #FFE799 40%,
+    #FFD369 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Shimmer keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Nav styles */
+nav {
+  display: flex;
+  align-items: center;
+  z-index: 10; /* So nav stays above toggle if overlapping */
 }
 
 nav ul.nav-list {
@@ -84,20 +143,60 @@ nav ul.nav-list li a:focus {
   outline: none;
 }
 
+/* Register button */
 .btn-register {
   background-color: #FF6B6B; /* Warm Coral */
   color: white !important;
   font-weight: 700;
   padding: 0.4rem 1rem;
   border-radius: 25px;
-  box-shadow: 0 0 10px #FF6B6B;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+  transition: background-color 0.3s ease;
 }
 
 .btn-register:hover,
 .btn-register:focus {
   background-color: #FF4C4C;
-  box-shadow: 0 0 15px #FF4C4C;
+  box-shadow: none;
   color: white !important;
   outline: none;
 }
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline-offset: 2px;
+  transition: filter 0.3s ease;
+  z-index: 100;
+}
+
+.theme-toggle-btn:focus {
+  outline: 2px solid #00C896;
+  outline-offset: 3px;
+}
+
+.toggle-icon {
+  width: 32px;
+  height: 32px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Dark theme icon style */
+body.dark-theme .toggle-icon {
+  filter: brightness(0.7) saturate(1.3);
+  transform: rotate(180deg);
+}
+
+
