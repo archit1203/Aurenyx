@@ -1,0 +1,117 @@
+/* error.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap');
+
+body {
+  margin: 0x	;
+  background-color: #222831;
+  font-family: 'Manrope', sans-serif;
+  color: #F4F4F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-page {
+  text-align: center;
+  max-width: 440px;
+  padding: 2rem;
+  background: #1b1f24;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 200, 150, 0.3);
+  user-select: none;
+}
+
+.logo-wrapper {
+  margin-bottom: 1.5rem;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+
+.illustration {
+  margin: 0 auto 2rem;
+  width: 200px;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 10px rgba(0, 200, 150, 0.3));
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #FFD369;
+  margin: 0 0 0.5rem 0;
+}
+
+.message {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.btn-home {
+  display: inline-block;
+  background-color: #00C896;
+  color: #222831;
+  font-weight: 700;
+  padding: 0.7rem 1.8rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 200, 150, 0.4);
+}
+
+.btn-home:hover,
+.btn-home:focus {
+  background-color: #00a87a;
+  box-shadow: 0 6px 14px rgba(0, 200, 150, 0.7);
+  outline: none;
+}
+
+.error-code {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+  letter-spacing: 2px;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Shimmer animation on logo */
+@keyframes shimmer {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 #00C896);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #00C896);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .error-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .illustration {
+    width: 140px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
