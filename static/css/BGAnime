@@ -1,4 +1,4 @@
-.landing-hero {
+.landing-hero { 
   position: relative;
   background-color: #222831; /* keep your original bg */
   overflow: hidden;
